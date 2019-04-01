@@ -1,0 +1,104 @@
+/*--------------------slider-------------------*/
+
+
+
+$color_photogallery: rgba(5, 8, 31, 0.2);
+$color_menu: rgba(5, 8, 31, 0.2);
+$color_menu_border: lightgrey;
+
+.photogallery{
+  display: -webkit-flex;
+  display: flex;
+
+  margin: auto;
+  width: 90%;
+
+  
+  menu{
+    background: rgba(252, 252, 252, 0.2);;
+    display: inline-block;
+    margin: 10px;
+    overflow: hidden;
+    padding: 30px 15px;
+    width: 10%;
+    min-height: auto;
+    
+    ul {
+      list-style-type: none;
+      min-height: auto;
+      margin: 12px;
+      padding: 0;
+      overflow-y: auto;
+      
+      li{
+        height: 20%;
+        margin-bottom: 16px;
+        width: 100%;
+        overflow: hidden;
+        
+        img{
+          opacity: .30;
+        }
+        img.activeImage{
+          opacity: 1;
+        }
+        img:hover{
+          cursor: pointer;
+        }
+        
+        span { display: none; }
+      }
+    }
+  }
+  
+  section{
+    display: inline-flex;
+    flex-direction: column;
+
+    margin: 30px 15px;
+    width: 100%;
+    vertical-align: top;
+  
+    
+    .galleryimage{
+    max-height: 70vh;
+      display: block;
+      margin: auto;
+    }
+    
+    .gallerydescription{
+      text-align: justify;
+      padding: 2%;
+      min-height: auto;
+
+    }
+  }
+  
+  img{
+    max-width: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: 0;
+
+}
+@media only screen and (orientation: portrait){
+  .photogallery{min-height: auto;}
+}
+
+.puncts{
+  margin-top: 4%;
+  display: inline-flex;
+  padding: auto;
+  width: 100%;
+  justify-content: center;
+}
+.item{
+
+}

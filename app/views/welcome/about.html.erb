@@ -1,0 +1,61 @@
+  <%= render 'menu' %>
+
+<script>
+$(document).ready(function () {
+
+
+
+var placemarks = []
+
+   placemarks[0] = {latitude: 44.61, longitude: 33.52, hintContent: "Daria"}
+ 
+    ymaps.ready(init);
+    function init(){ 
+        // Создание карты.    
+        var myMap = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 5
+        });
+
+ MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+        placemarks.forEach(function(obj){
+          var placemark = new ymaps.Placemark([obj.latitude, obj.longitude],
+            {
+              hintContent: obj.hintContent
+            });
+          myMap.geoObjects.add(placemark)
+        });
+
+    }
+});</script>
+
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=<85f5113c-525d-4ba2-9608-cff3a16e10ad>&lang=ru_RU" type="text/javascript"></script>
+
+  <div class="col-md-8 col-lg-9 content-container" style="background-color: #d96abb">
+    <div class='about_info'>
+      <h1><i class="fa fa-heart-o fa-2x"></i>МЫ ЗАБОТИМСЯ О ВАШЕМ ЗДОРОВЬЕ И КРАСОТЕ</h1>
+      <p>Рутинные походы в магазины косметики отменяются - чтобы купить косметику, достаточно сделать заказ онлайн. Нельзя купить красоту, но можно купить качественные средства для мейкапа и раскрыть с их помощью свою индивидуальность и творческие способности.
+      <p>Последние новинки средств для макияжа, обширный каталог, в котором каждая найдет для себя ту косметику, которая подойдет именно ей, фото макияжа с использованием косметики NYX Professional Makeup, множество отзывов на продукцию - все это ты найдешь в нашем интернет-магазине. В нашем каталоге представлено множество самых разных товаров - это и косметические продукты, и аксессуары, и даже товары для беременных.</p>
+      <p>Успей сделать заказ прямо сейчас!</p>
+      <h1><i class="fa fa-heart-o fa-2x"></i>НАШИ СОВЕТЫ(от бъюти-блоггера леди)</h1>
+      <p>Праймер сделает любой макияж более стойким и выровняет тон кожи. Он наносится на чистую кожу в качестве первого слоя. К тональному крему можно переходить только после полного высыхания базы.
+      <p>В дневных образах вполне можно заменить плотный и «тяжелый» тональный крем ВВ или СС-средствами с микропигментами.</p>
+      <p>Если нет времени на полноценный макияж, достаточно скорректировать брови, нанести румяна и блеск для губ натурального ягодного оттенка.
+      В макияже достаточно одного акцента: можно профессионально выделить глаза в технике smoky eyes или выбрать помаду трендового темного цвета — но не все сразу.</p>
+      <p>Демакияж должен стать обязательным вечерним ритуалом: только при регулярном очищении и уходе за кожей можно быть уверенной, что мэйкап будет выглядеть аккуратно.</p>
+    </div>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+  </div>
+</div>
+<div id="map" style="width: 80vw; height: 50vh; margin-left: auto; margin-right: auto;"></div>
+  </div>
+  
+  </div>

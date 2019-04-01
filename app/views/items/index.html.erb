@@ -1,0 +1,24 @@
+<%= render 'welcome/menu' %>
+<div class="col-md-8 col-lg-9 content-container" style="background-color: #d96abb">
+<section class="content-section">
+
+  <% @items.each do |item| %>        
+    <div class="one_mark">
+      <div class="box">
+        <p><%= image_tag item.mainPhoto_url(:thumb).to_s, :class => ""%></p>
+      </div>
+      <div class="info-rest">
+        <h1><%=item.name%></h1>
+        <br>
+        <div class="prokrutka">
+          <%= item.descr %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+   <%= paginate @items%>
+
+  </section>
+ 
+
+</div>

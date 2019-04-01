@@ -1,0 +1,44 @@
+.one_mark{
+background: rgba(0,0,0,0.40);
+display: -webkit-flex; 
+display: flex;
+  position: relative;
+  margin: 2%;
+  padding: 2%;
+  flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+  img{
+    height: 100%;
+  }
+}
+.prokrutka {
+
+  padding: 0 1vw;
+  height: 8vw;
+  width: 100%;
+  background: rgba(252, 252, 252, 0.7);
+  word-wrap: break-word;
+  overflow: auto;
+  font-size: 2vw;
+  color: black;
+}
+.info-rest{
+display: flex;
+	width: 40%;
+  float: right;
+  flex-wrap: wrap;
+  flex-direction: row;
+    h1{
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Cinzel Decorative', cursive;
+  }
+}
+.box {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: 400px;
+  cursor: pointer;
+}

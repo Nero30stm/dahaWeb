@@ -1,0 +1,56 @@
+<script type="text/javascript">
+  function ch() {
+    var inp = document.getElementsByName('dva');
+    for (var i = 0; i < inp.length; i++) {
+        if (inp[0].type == "radio" && inp[0].checked) {
+            gon.m = gon.Alf;
+        }
+        else
+          gon.m = gon.Date;
+    }
+}
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+      gon.m = gon.Alf;
+    });
+</script>
+
+
+<%= render 'welcome/menu' %>
+<div class="col-md-8 col-lg-9 content-container" style="background-color: #d96abb">
+<section class="content-section">
+
+  <div class="d10"><h3></h3>
+  <%= form_tag marks_path, class: "searchBlock", method: :get do %>
+  
+  <p>
+    <%= text_field_tag :query, params[:query], :placeholder => "Search Events", :class => "searchLine", :size => "20" %>
+    <%= submit_tag "Search", name: nil,  :class => "searchButton" %>
+
+  </p>
+
+<% end %>
+</div>
+  <% @marks.each do |mark| %>        
+    <div class="one_mark">
+      <div class="box">
+        <p><%= image_tag mark.mainPhoto_url(:thumb).to_s, :class => ""%></p>
+      </div>
+      <div class="info-rest">
+        <h1 style="color: black;"><%= mark.name%></h1>
+        <br>
+        <div class="prokrutka">
+          <%= mark.descr %>
+        </div>
+        <a href="<%= mark_path(mark) %>"> <img style="width: 40%;" src="/img/button.png" alt="detale"></a>
+      </div>
+    </div>
+  <% end %>
+   <%= paginate @marks%>
+
+  </section>
+ 
+
+</div>
+

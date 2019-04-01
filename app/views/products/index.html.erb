@@ -1,0 +1,34 @@
+<%= render 'welcome/menu' %>
+<div class="col-md-8 col-lg-9 content-container" style="background-color: #d96abb">
+<section class="content-section">
+
+<h1><%= @mark.name%></h1>
+
+
+<section id="gallery">
+<% @products.each do |prod| %>
+ 	<ul>
+ 		<li>
+ 			<article>
+ 				<a><%= link_to product_orders_path(prod, @order) do%>
+ 					<figure>
+ 						<%= image_tag prod.mainPhoto_url(:thumb).to_s, :class => ""%>
+ 						<figcaption>
+ 							<header>
+ 								<%= prod.name %>
+ 							</header>
+ 							<h2>Price: <%= prod.cost%></h2>
+ 							<h2>Press to detale</h2>
+ 						</figcaption>
+ 					</figure>
+ 					<%end%>
+ 				</a>
+ 			</article>
+ 		</li>
+ 	</ul>
+ <%end%>
+</section>
+
+
+</section>
+</div>

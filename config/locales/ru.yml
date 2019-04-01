@@ -1,0 +1,11 @@
+ru:
+  menu:
+    home: "Главная"
+    marks: "Бренды"
+    about: "О нас"
+    order: "Заказ"
+    contacts: "Контакты"
+    items: "Новости"
+    language: "Русский"
+  products:
+    title: "Products"

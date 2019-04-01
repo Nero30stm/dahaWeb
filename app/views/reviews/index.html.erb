@@ -1,0 +1,45 @@
+<%= render 'welcome/menu'%>
+<div class="col-md-8 col-lg-9 content-container" style="background-color: #d96abb">
+<section class="content-section">
+
+<h1>Add a review:</h1>
+         <%= form_with(model: [ @product, @product.reviews.build ], local: true) do |form| %>
+            <h1><%= @product.name%></h1>
+         <p>
+         <%= form.label :name, 'Write your name' %><br>
+         <%= form.text_field :name %>
+         </p>
+        <p>
+         <%= form.label :descr, 'Write count' %><br>
+         <%= form.text_field :descr %>
+         </p>
+         <p>
+            <legend>Please rate:</legend>
+     <%= form.radio_button :rate, 5, :class => "rating", :id => "star5"%><label for="star5" title="Excelent!">5 stars</label>
+     <%= form.radio_button :rate, 4, :class => "rating", :id => "star4"%><label for="star4" title="Good">4 stars</label>
+     <%= form.radio_button :rate, 3, :class => "rating", :id => "star3"%><label for="star3" title="normal">3 stars</label>
+     <%= form.radio_button :rate, 2, :class => "rating", :id => "star2"%><label for="star2" title="bad">2 stars</label>
+     <%= form.radio_button :rate, 1, :class => "rating", :id => "star1"%><label for="star1" title="Very bad">1 star</label>
+        </p>
+
+        
+      
+     <p><%= form.submit %></p>
+      <%end%>
+
+       <% @reviews.each do |mark| %>        
+    <div class="one_mark">
+      <div class="box">
+        <p><h1 style="color: black"><%= mark.name  %><br><br>rate: <%= mark.rate %></h1></p>
+      </div>
+      <div class="info-rest">
+        <br>
+        <div class="prokrutka">
+          <%= mark.descr %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</section>
+</div>

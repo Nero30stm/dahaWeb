@@ -1,0 +1,33 @@
+<%= render 'welcome/menu'%>
+<div class="col-md-8 col-lg-9 content-container" style="background-color: #d96abb">
+<section class="content-section">
+
+<h1>Add a order:</h1>
+         <%= form_with(model: [ @product, @product.orders.build ], local: true) do |form| %>
+            <h1><%= @product.name%></h1>
+            <p><%= image_tag @product.mainPhoto_url(:thumb).to_s, :class => ""%></p>
+            <h3><%= @product.descr %><h3>
+            <h1>count: <%= @product.count%>   cost:  <%= @product.cost%></h1>
+         <p>
+         <%= form.label :name, 'Write your name' %><br>
+         <%= form.text_field :name %>
+         </p>
+        <p>
+         <%= form.label :count, 'Write count' %><br>
+         <%= form.text_field :count %>
+         </p>
+         <p>
+            <legend>Choose shipping:</legend>
+        
+
+            <%= form.radio_button :ship, 2, :id => "2"%><label for="2" title="самовывоз">самовывоз</label><br>
+     <%= form.radio_button :ship, 1, :id => "1"%><label for="1" title="доставка">доставка</label>
+        </p>
+
+        
+     <p><%= form.submit %></p><br>
+     <p><a href="<%= product_reviews_path(@product) %>"> <img style="width: 40%;" src="/img/button.png" alt="detale"></a></p>
+      <%end%>
+
+</section>
+</div>
